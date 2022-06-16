@@ -1,0 +1,132 @@
+/* {
+    - Pale Blue: hsl(243, 100%, 93%)
+- Grayish Blue: hsl(229, 7%, 55%)
+- Dark Blue: hsl(228, 56%, 26%)
+- Very Dark Blue: hsl(229, 57%, 11%)
+
+Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%)
+
+Family: [Raleway](https://fonts.google.com/specimen/Raleway)
+- Weights: 400, 700
+
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Inter:wght@400;700&family=Koulen&family=Lexend+Deca&family=Permanent+Marker&family=Poppins:wght@400;700;900&family=Raleway:wght@500;700&family=Red+Hat+Display:wght@500;700;900&family=Rubik:wght@400;500;700&family=Supermercado+One&display=swap");
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  background-image: url(./images/bg-mobile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 10rem auto;
+}
+
+.first-container {
+  height: 10rem;
+  width: 18rem;
+  padding: 3rem;
+  background-color: hsl(228, 56%, 26%);
+  border: none;
+  border-radius: 1rem 5rem 1rem 1rem;
+}
+
+.logo {
+  padding: 1.5rem 0
+}
+
+.icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.icon-svg {
+  background-color: hsl(229, 57%, 11%);
+  padding: 1rem;
+  border-radius: 1rem;
+  height: 1.5rem;
+}
+
+.second-container {
+  height: 10rem;
+  width: 18rem;
+  padding: 3rem;
+  background-color: hsl(228, 56%, 26%);
+  border: none;
+  border-radius: 1rem;
+
+}
+
+.second-container div p {
+   color: hsl(243, 100%, 93%);
+}
+
+input {
+  width: 20rem;
+  /* height: 2rem; */
+}
+
+.gb-class {
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: row; */
+}
+
+.gb-left {
+  background-color: hsl(243, 100%, 93%);
+  width: 9rem;
+  padding: 1rem; 
+  border-radius: 1rem;
+  text-transform: uppercase;
+  color: hsl(229, 7%, 55%);
+  transform: translate(4rem, 3rem);
+}
+
+.gb-left span {
+  font-size: 40px;
+  font-weight: 700;
+  color: hsl(229, 57%, 11%);
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-image: url(./images/bg-desktop.png);
+  }
+
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .first-container {
+    width: 20rem;
+    padding: 2rem;
+
+  }
+  
+  .second-container {
+    width: 30rem;
+    height: 7rem;
+    transform: translateY(5rem);
+    padding: 1rem;
+  }
+
+  .gb-left {
+    transform: translate(18rem, -11rem);
+
+  }
+}
