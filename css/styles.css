@@ -1,17 +1,15 @@
-/* {
-    - Pale Blue: hsl(243, 100%, 93%)
-- Grayish Blue: hsl(229, 7%, 55%)
-- Dark Blue: hsl(228, 56%, 26%)
-- Very Dark Blue: hsl(229, 57%, 11%)
-
-Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%)
-
-Family: [Raleway](https://fonts.google.com/specimen/Raleway)
-- Weights: 400, 700
-
-} */
-
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Inter:wght@400;700&family=Koulen&family=Lexend+Deca&family=Permanent+Marker&family=Poppins:wght@400;700;900&family=Raleway:wght@500;700&family=Red+Hat+Display:wght@500;700;900&family=Rubik:wght@400;500;700&family=Supermercado+One&display=swap");
+
+:root {
+  --pale-blue: hsl(243, 100%, 93%);
+  --grayish-blue: hsl(229, 7%, 55%);
+  --dark-blue: hsl(228, 56%, 26%);
+  --very-dark-blue: hsl(229, 57%, 11%);
+ 
+  /* Gradient color */
+  --gradient-from: hsl(6, 100%, 80%);
+  --gradient-to: hsl(335, 100%, 65%);
+}
 
 html {
   font-size: 14px;
@@ -34,13 +32,17 @@ main {
   margin: 10rem auto;
 }
 
+.background-style {
+  display: none;
+}
+
 .first-container {
   height: 10rem;
   width: 18rem;
   padding: 3rem;
-  background-color: hsl(228, 56%, 26%);
+  background-color: var(--dark-blue);
   border: none;
-  border-radius: 1rem 5rem 1rem 1rem;
+  border-radius: 1rem 8rem 1rem 1rem;
 }
 
 .logo {
@@ -53,7 +55,7 @@ main {
 }
 
 .icon-svg {
-  background-color: hsl(229, 57%, 11%);
+  background-color: var(--very-dark-blue);
   padding: 1rem;
   border-radius: 1rem;
   height: 1.5rem;
@@ -63,29 +65,35 @@ main {
   height: 8rem;
   width: 18rem;
   padding: 3rem;
-  background-color: hsl(228, 56%, 26%);
+  background-color: var(--dark-blue);
   border: none;
   border-radius: 1rem;
 }
 
 .second-container div p {
-  color: hsl(243, 100%, 93%);
+  color: var(--pale-blue);
+  font-weight: 700;
+}
+
+.container-text {
+  color: var(--grayish-blue);
+  font-weight: 400;
 }
 
 #DIV_1 {
-  height: 1.5rem;
+  height: 1.2rem;
   position: relative;
   touch-action: none;
   width: 17rem;
-  background: hsl(229, 57%, 11%);
+  background: var(--very-dark-blue);
   border: none;
   border-radius: 10rem;
 }
 
 #DIV_2 {
-  height: 1.2rem;
+  height: 1rem;
   width: 13rem;
-  background: linear-gradient(hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  background: linear-gradient(var(--gradient-from), var(--gradient-to));
   border: 0.1rem solid;
   border-radius: 10rem;
 }
@@ -95,7 +103,7 @@ main {
   height: 0.75rem;
   left: 12.4rem;
   position: absolute;
-  top: 0.27rem;
+  top: 0.22rem;
   width: 0.7rem;
   background-color: white;
   border-radius: 50%;
@@ -114,41 +122,85 @@ main {
   padding: 1.5rem;
   border-radius: 1rem;
   text-transform: uppercase;
-  color: hsl(229, 7%, 55%);
+  color: var(--grayish-blue);
   transform: translate(2rem, 0rem);
   font-size: 11.6px;
+  display: flex;
 }
 
-.gb-left span {
+.gb-number{
   font-size: 40px;
   font-weight: 700;
-  color: hsl(229, 57%, 11%);
+  color: var(--very-dark-blue);
+  
+}
+
+.left {
+  margin-top: 1rem;
+  padding: .5rem;
+  font-weight: 700;
 }
 
 @media screen and (min-width: 768px) {
   body {
-    background-image: url(./images/bg-desktop.png);
+    background-color: var(--very-dark-blue); 
+    background-image: unset;
+    height: 100vh;
   }
+
+  .background-style {
+    display: block;
+    background-image: url(./images/bg-desktop.png);
+    background-repeat: no-repeat;
+    height: 25rem;
+    width: 100%;
+    transform: translateY(30rem);
+  }
+
 
   main {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    margin: -3rem 0 0 15rem;
   }
 
   .first-container {
     width: 20rem;
     padding: 2rem;
+    height: 13rem;
+    transform: translateY(1rem);
   }
 
   .second-container {
-    width: 30rem;
-    height: 7rem;
+    width: 40rem;
+    height: 9rem;
     transform: translateY(5rem);
-    padding: 1rem;
+    padding: 2rem;
+  }
+
+  #DIV_1 {
+    width: 38rem;
+  }
+
+
+  #DIV_2 {
+    width: 30rem;
+  }
+
+
+  #A_3 {
+    left: 29.3rem;
+  }
+
+  .gb-class {
+    width: 38rem;
   }
 
   .gb-left {
-    transform: translate(18rem, -11rem);
+    height: 5rem;
+    padding: 1.8rem;
+    transform: translate(25rem, -14rem);
+    clip-path: polygon(0 0, 100% 0, 100% 94%, 85% 70%, 0 70%);
   }
+
 }

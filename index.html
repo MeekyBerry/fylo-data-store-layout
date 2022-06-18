@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
+    <div class="background-style"></div>
     <main>
-      <section class="first-container">
+      <div class="first-container">
         <div class="logo">
           <svg xmlns="http://www.w3.org/2000/svg" width="135" height="40">
             <path
@@ -56,11 +57,14 @@
             />
           </svg>
         </div>
-      </section>
+      </div>
 
-      <section class="second-container">
+      <div class="second-container">
         <div>
-          <p>You’ve used 815 GB of your storage</p>
+          <p>
+            <span class="container-text">You’ve used</span> 815 GB
+            <span class="container-text">of your storage</span>
+          </p>
           <div>
             <div id="DIV_1">
               <div id="DIV_2"></div>
@@ -72,8 +76,11 @@
             <span>1000 GB</span>
           </p>
         </div>
-          <div class="gb-left"><span>185</span> GB Left</div>
-      </section>
+        <div class="gb-left">
+          <div class="gb-number">185</div>
+          <div class="left">GB Left</div>
+        </div>
+      </div>
     </main>
   </body>
 </html>
