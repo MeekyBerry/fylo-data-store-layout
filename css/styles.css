@@ -5,7 +5,7 @@
   --grayish-blue: hsl(229, 7%, 55%);
   --dark-blue: hsl(228, 56%, 26%);
   --very-dark-blue: hsl(229, 57%, 11%);
- 
+
   /* Gradient color */
   --gradient-from: hsl(6, 100%, 80%);
   --gradient-to: hsl(335, 100%, 65%);
@@ -29,7 +29,8 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin: 10rem auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .background-style {
@@ -43,6 +44,7 @@ main {
   background-color: var(--dark-blue);
   border: none;
   border-radius: 1rem 8rem 1rem 1rem;
+  margin-top: 10rem;
 }
 
 .logo {
@@ -80,7 +82,7 @@ main {
   font-weight: 400;
 }
 
-#DIV_1 {
+.progress_bar {
   height: 1.2rem;
   position: relative;
   touch-action: none;
@@ -90,7 +92,7 @@ main {
   border-radius: 10rem;
 }
 
-#DIV_2 {
+.progress_bar-gradient {
   height: 1rem;
   width: 13rem;
   background: linear-gradient(var(--gradient-from), var(--gradient-to));
@@ -98,7 +100,7 @@ main {
   border-radius: 10rem;
 }
 
-#A_3 {
+.progress_bar-btn {
   cursor: default;
   height: 0.75rem;
   left: 12.4rem;
@@ -109,17 +111,18 @@ main {
   border-radius: 50%;
 }
 
-.gb-class {
+.data {
   width: 17rem;
   display: flex;
   justify-content: space-between;
 }
 
-.gb-left {
+.talk-bubble {
   background-color: white;
+  position: relative;
   width: 10rem;
-  height: 4rem;
-  padding: 1.5rem;
+  height: auto;
+  padding: 1rem;
   border-radius: 1rem;
   text-transform: uppercase;
   color: var(--grayish-blue);
@@ -128,47 +131,51 @@ main {
   display: flex;
 }
 
-.gb-number{
+.gb-number {
   font-size: 40px;
   font-weight: 700;
   color: var(--very-dark-blue);
-  
 }
 
-.left {
-  margin-top: 1rem;
-  padding: .5rem;
+.gb-left {
+  margin: 1rem 0 0 .3rem;
+  padding: 0.5rem;
   font-weight: 700;
 }
 
-@media screen and (min-width: 768px) {
+.gb-left span {
+  margin-left: .3rem;
+}
+
+@media screen and (min-width: 1050px) {
   body {
-    background-color: var(--very-dark-blue); 
+    background-color: var(--very-dark-blue);
     background-image: unset;
     height: 100vh;
+    width: 100vw;
   }
+
 
   .background-style {
     display: block;
     background-image: url(./images/bg-desktop.png);
     background-repeat: no-repeat;
-    height: 25rem;
-    width: 100%;
+    background-size: cover;
+    height: 30rem;
     transform: translateY(30rem);
   }
-
 
   main {
     display: flex;
     flex-direction: row;
-    margin: -3rem 0 0 15rem;
+    transform: translateY(-17rem);
   }
 
   .first-container {
     width: 20rem;
     padding: 2rem;
     height: 13rem;
-    transform: translateY(1rem);
+    transform: translateY(-1.3rem);
   }
 
   .second-container {
@@ -178,29 +185,37 @@ main {
     padding: 2rem;
   }
 
-  #DIV_1 {
+  .progress_bar {
     width: 38rem;
   }
 
-
-  #DIV_2 {
+  .progress_bar-gradient {
     width: 30rem;
   }
 
-
-  #A_3 {
+  .progress_bar-btn {
     left: 29.3rem;
   }
 
-  .gb-class {
+  .data {
     width: 38rem;
   }
 
-  .gb-left {
-    height: 5rem;
-    padding: 1.8rem;
-    transform: translate(25rem, -14rem);
-    clip-path: polygon(0 0, 100% 0, 100% 94%, 85% 70%, 0 70%);
+  .talk-bubble {
+    width: 12rem;
+    transform: translate(24rem, -13rem);
+  }
+
+  .talk-bubble::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 0;
+    left: auto;
+    bottom: -1.5rem;
+    border: 2rem solid;
+    border-color: white white transparent transparent;
   }
 
 }
